@@ -7,9 +7,16 @@ def testZero():
     game = BowlingGame()
     Assert.Equal(0, game.score())
 
+def testGutterGame():
+    game = BowlingGame()
+    for i in range(20):
+        game.bowl(0)
+    Assert.Equal(0, game.score())
+
 
 tests = {
-        "Can report zero score on init": testZero
+        "Can report zero score on init": testZero,
+        "Can report a gutter game as 0": testGutterGame
         }
 
 for eachTest in tests:
