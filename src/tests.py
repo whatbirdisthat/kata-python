@@ -7,4 +7,11 @@ def testZero():
     game = BowlingGame()
     Assert.Equal(0, game.score())
 
-testZero()
+
+tests = {
+        "Can report zero score on init": testZero
+        }
+
+for eachTest in tests:
+    print(eachTest)
+    tests[eachTest]()
