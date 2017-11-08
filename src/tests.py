@@ -13,5 +13,11 @@ tests = {
         }
 
 for eachTest in tests:
-    print(eachTest)
-    tests[eachTest]()
+    testName = eachTest
+    testResult = "\033[32m\u2713\033[0m"
+    try:
+        tests[eachTest]()
+    except:
+        testResult = "\033[31m\u2717\033[0m"
+
+    print("{} - {}".format(testResult, testName))
